@@ -23,4 +23,6 @@
  */
 + (instancetype)sharedInstance;
 
+@property (nonatomic,copy) NSDictionary* customRequestHeaders;
+
 @end

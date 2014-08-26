@@ -104,6 +104,10 @@ static NSString *const BFWebViewAppLinkResolverShouldFallbackKey = @"should_fall
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setValue:BFWebViewAppLinkResolverMetaTagPrefix
    forHTTPHeaderField:BFWebViewAppLinkResolverPreferHeader];
+    
+    for ( NSString* key in self.customRequestHeaders )
+        [request addValue:self.customRequestHeaders[key] forHTTPHeaderField:key];
+    
     [NSURLConnection sendAsynchronousRequest:request
                                        queue:[NSOperationQueue mainQueue]
                            completionHandler:^(NSURLResponse *response,

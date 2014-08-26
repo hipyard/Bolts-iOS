@@ -27,4 +27,6 @@
  */
 - (BFTask *)appLinkFromURLInBackground:(NSURL *)url;
 
+@property (nonatomic,copy) NSDictionary* customRequestHeaders;
+
 @end
